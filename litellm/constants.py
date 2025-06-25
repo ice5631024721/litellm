@@ -693,6 +693,9 @@ PROMETHEUS_BUDGET_METRICS_REFRESH_INTERVAL_MINUTES = int(
 MCP_TOOL_NAME_PREFIX = "mcp_tool"
 MAXIMUM_TRACEBACK_LINES_TO_LOG = int(os.getenv("MAXIMUM_TRACEBACK_LINES_TO_LOG", 100))
 
+# Headers to control callbacks
+X_LITELLM_DISABLE_CALLBACKS = "x-litellm-disable-callbacks"
+
 ########################### LiteLLM Proxy Specific Constants ###########################
 ########################################################################################
 MAX_SPENDLOG_ROWS_TO_QUERY = int(
@@ -714,6 +717,7 @@ BEDROCK_AGENT_RUNTIME_PASS_THROUGH_ROUTES = [
     "generateQuery/",
     "optimize-prompt/",
 ]
+BASE_MCP_ROUTE = "/mcp"
 
 BATCH_STATUS_POLL_INTERVAL_SECONDS = int(
     os.getenv("BATCH_STATUS_POLL_INTERVAL_SECONDS", 3600)
